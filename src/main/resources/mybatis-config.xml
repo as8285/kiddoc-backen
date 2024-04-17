@@ -1,0 +1,32 @@
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd" >
+<configuration>
+
+<properties resource="driver.properties"/>
+
+
+	<settings>
+		<setting name="jdbcTypeForNull" value="NULL"/>
+		
+</settings>
+<typeAliases>
+<typeAlias type="com.buddy.kiddoc.model.vo.Hospital" alias="Hospital"/>
+</typeAliases>
+
+<environments default="develop">
+<environment id="develop">
+<transactionManager type="JDBC" />
+<dataSource type="UNPOOLED">
+<property name="driver" value="${db.driver}" />
+<property name="url" value="${db.url}" />
+<property name="username" value="${db.username}" />
+<property name="password" value="${db.password}" />
+</dataSource>
+
+</environment>
+</environments>
+<mappers>
+<mapper resource="mappers/hospital-mapper.xml" />
+
+</mappers>
+
+</configuration>
